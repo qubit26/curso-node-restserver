@@ -8,6 +8,8 @@ class Server {
         this.port = process.env.PORT;
         this.usuariosPath = '/francesca-api/usuarios';
 
+        // Conectar a base de datos
+
         // Middlewares
         this.middlewares();
 
