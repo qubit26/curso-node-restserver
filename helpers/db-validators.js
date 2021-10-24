@@ -11,7 +11,7 @@ const esRolValido = async(rol = '') => {
 const correoExiste = async(correo) => {
     const verificarCorreo = await Usuario.findOne({correo});
     if (verificarCorreo) {
-        throw new Error('Este correo ya se encuentra registrado en la base de datos, por favor intenta con otro.');
+        throw new Error('Este correo ya se encuentra registrado en la Base de Datos, por favor intenta con otro.');
     }
 }
 
