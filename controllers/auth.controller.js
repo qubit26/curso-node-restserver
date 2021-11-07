@@ -46,7 +46,8 @@ const login = async(req = request, res = response) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            msg: 'Algo ha salido mal, por favor hable con el administrador.'
+            msg: 'Algo ha salido mal, por favor hable con el administrador.',
+            error
         });
     }
 
