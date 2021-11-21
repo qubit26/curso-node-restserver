@@ -7,8 +7,16 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.usuariosPath = '/francesca-api/usuarios';
-        this.authPath = '/francesca-api/auth';
+        this.paths = {
+            auth: '/francesca-api/auth',
+            buscar: '/francesca-api/buscar',
+            categorias: '/francesca-api/categorias',
+            productos: '/francesca-api/productos',
+            usuarios: '/francesca-api/usuarios'
+        }
+        // this.usuariosPath = '/francesca-api/usuarios';
+        // this.authPath = '/francesca-api/auth';
+        // this.categoriasPath = 'francesca-api/categorias'
 
         // Conectar a base de datos
         this.conectarDB();
@@ -39,8 +47,11 @@ class Server {
     routes() {
 
 
-        this.app.use(this.authPath, require('../routes/auth'));
-        this.app.use(this.usuariosPath, require('../routes/usuarios'));
+        this.app.use(this.paths.auth, require('../routes/auth'));
+        this.app.use(this.paths.buscar, require('../routes/buscar'));
+        this.app.use(this.paths.usuarios, require('../routes/usuarios'));
+        this.app.use(this.paths.categorias, require('../routes/categorias'));
+        this.app.use(this.paths.productos, require('../routes/productos'));
 
     }
 
