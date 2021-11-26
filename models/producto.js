@@ -30,7 +30,8 @@ const ProductoSchema = Schema({
     disponibilidad: {
         type: Boolean, 
         default: true
-    }
+    },
+    img: {type: String}
 });
 
 ProductoSchema.methods.toJSON = function() {
